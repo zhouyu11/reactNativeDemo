@@ -4,23 +4,18 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { Component } from 'react'
+import { AppRegistry, StyleSheet, Text, View } from 'react-native'
 
-import {MeauPage} from './js/Pages/MeauPage'
+import { MeauPage } from './js/Pages/MeauPage'
 
 export default class rnTest extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
-      <MeauPage/>
+        <MeauPage />
       </View>
-    );
+    )
   }
 }
 
@@ -29,18 +24,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
-  },
-});
+    marginBottom: 5
+  }
+})
 
-AppRegistry.registerComponent('rnTest', () => rnTest);
+AppRegistry.registerComponent('rnTest', () => rnTest)
