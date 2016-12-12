@@ -12,13 +12,13 @@ import {
   View
 } from 'react-native';
 
+import {MeauPage} from './js/Pages/MeauPage'
+
 export default class rnTest extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          hello world!
-        </Text>
+      <MeauPage/>
       </View>
     );
   }
