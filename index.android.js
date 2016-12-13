@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Navigator } from 'react-native'
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View, Navigator } from 'react-native';
 
-import { MeauPage } from './js/Pages/Meau/MeauPage'
+import { LoginPage } from './js/Pages/LoginPage/LoginPage';
 
 export default class rnTest extends Component {
   constructor(props){
@@ -13,7 +13,7 @@ export default class rnTest extends Component {
     return (
       <Navigator
         style={{flex: 1}}
-        initialRoute={{component: MeauPage}}
+        initialRoute={{component: LoginPage}}
         renderScene={this.renderScene}
       />
     )

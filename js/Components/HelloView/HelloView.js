@@ -28,6 +28,7 @@ export class HelloView extends React.Component {
   }
 
   _navigate () {
+    this._handlePress();
     this.props.navigator.push({
       component: MyScene,
       passProps: {
