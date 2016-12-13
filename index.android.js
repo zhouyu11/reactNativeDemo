@@ -1,13 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react'
 import { AppRegistry, StyleSheet, Text, View } from 'react-native'
 
-import { MeauPage } from './js/Pages/MeauPage'
+import { MeauPage } from './js/Pages/Meau/MeauPage'
 
 export default class rnTest extends Component {
   render () {
@@ -21,10 +15,7 @@ export default class rnTest extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    flex: 1
   },
   welcome: {
     fontSize: 20,

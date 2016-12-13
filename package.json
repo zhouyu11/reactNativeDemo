@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "mocha --require  react-native-mock/mock.js --compilers js:babel-core/register --recursive jsUnitTests/*/*.js"
+    "test": "mocha --require  react-native-mock/mock.js --compilers js:babel-core/register --recursive jsUnitTests/*/*/*.js"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
     "react": "15.4.1",
     "react-native": "0.39.2"
   },
