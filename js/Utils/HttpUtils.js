@@ -17,7 +17,6 @@ export class HttpUtils {
 		return this;
 	}
 
-
 	setUrl(url){
 		this.url = this.host + url;
 		return this;
