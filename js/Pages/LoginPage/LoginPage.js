@@ -65,7 +65,6 @@ export class LoginPage extends React.Component {
       .dofetch()
       .then((data) => {
         this.setState({password: 'ok'});
-        console.log('data: ', data);
       })
       .catch((err) => {
         console.log(err);

@@ -75,7 +75,7 @@ export class HttpUtils {
 		return this;
 	}
 
-	setParams(val){
+	setParams(val) {
 		this.params = val;
 		return this;
 	}
@@ -85,7 +85,7 @@ export class HttpUtils {
 		return this;
 	}
 
-	dofetch(){
+	dofetch() {
 		let options         = {};
 		options.method      = this.method;
 		options.credentials = this.credentials;
