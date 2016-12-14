@@ -1,24 +1,25 @@
 'use strict';
 
-class HttpUtils {
-
+export class HttpUtils {
 	init(){
+		this.host          = 'http://172.29.33.41:8080';
 		this.url           = '';
 		this.method        = 'GET';
 		this.headers       = {};
-		this.body_type     = 'form';
+		this.body_type     = 'json';
 		this.bodys         = {};
 		this.credentials   = 'omit';
 		this.return_type   = 'json';
 		this.overtime      = 0;
 		this.firstThen	   = undefined;
+		this.params        = undefined;
 
 		return this;
 	}
 
 
 	setUrl(url){
-		this.url = url;
+		this.url = this.host + url;
 		return this;
 	}
 
@@ -75,6 +76,11 @@ class HttpUtils {
 		return this;
 	}
 
+	setParams(val){
+		this.params = val;
+		return this;
+	}
+
 	thenStart(then) {
 		this.firstThen = then;
 		return this;
@@ -87,24 +93,13 @@ class HttpUtils {
 
 		options.headers = this.headers;
 
-		if({} != this.bodys && this.method != 'GET'){
-			if('form' == this.body_type){
-				this.setHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
-				let data = '';
-				Object.keys(this.bodys).map((index) => {
-					let param = encodeURI(this.bodys[index]);
-					data += `${index}=${param}&`;
-				});
-				options.body = data;
-			}else if('file' == this.body_type){
-				let data = new FormData();
-				Object.keys(this.bodys).map((index) => {
-					data.append(index, this.bodys[index]);
-				});
-				options.body = data;
-			}else if('json' == this.body_type){
+		if({} != this.bodys && this.method != 'GET' && 'json' == this.body_type){
 				options.body = JSON.stringify(this.bodys);
-			}
+		}
+
+		if (this.params) {
+				this.url += '?';
+				Object.keys(this.params).forEach(key => {this.url += (key + '=' + this.params[key]); this.url+= '&' });
 		}
 
 		return Promise.race([
@@ -130,8 +125,6 @@ class HttpUtils {
 							return response.text();
 						}else if('blob' == this.return_type){
 							return response.blob();
-						}else if('formData' == this.return_type){
-							return response.formData();
 						}else if('arrayBuffer' == this.return_type){
 							return response.arrayBuffer();
 						}
@@ -141,4 +134,4 @@ class HttpUtils {
 
 }
 
-module.exports = HttpUtils;
+export default HttpUtils;

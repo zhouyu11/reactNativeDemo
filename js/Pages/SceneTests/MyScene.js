@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import React, {Component} from 'react'
+import {View, Text, TouchableHighlight} from 'react-native'
 
 export class MyScene extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this._navigate = this._navigate.bind(this);
   }
-  render () {
+  render() {
     const {title} = this.props
     return (
       <View>
@@ -18,12 +18,10 @@ export class MyScene extends Component {
     )
   }
 
-  _navigate(){
+  _navigate() {
     this.props.navigator.pop();
   }
 }
-
-
 
 MyScene.propTypes = {
   title: React.PropTypes.string,
