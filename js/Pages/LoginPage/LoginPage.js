@@ -4,7 +4,7 @@ import React from "react";
 //noinspection JSUnresolvedVariable
 import {Text, TouchableHighlight, TextInput, View, StyleSheet} from "react-native";
 import Button from "react-native-button";
-import HttpUtils from "../../Utils/HttpUtils";
+import {HttpUtils} from "../../Utils/HttpUtils";
 import styles from "./styles";
 
 export class LoginPage extends React.Component {

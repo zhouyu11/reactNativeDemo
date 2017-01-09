@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {AppRegistry, StyleSheet, Text, View, Navigator} from "react-native";
-import {LoginPage} from "./js/Pages/LoginPage/LoginPage";
+import {MeauPage} from "./js/Pages/Meau/MeauPage";
 
 export default class rnTest extends Component {
   constructor(props) {
@@ -9,29 +9,25 @@ export default class rnTest extends Component {
       currentUser: {}
     };
     this.renderScene = this.renderScene.bind(this);
-    this.handleChangeCurrentUser = this.handleChangeCurrentUser.bind(this);
+
   }
 
   render() {
-    return (<Navigator
-            style={{
-        flex: 1
-      }}
-            initialRoute={{ component: LoginPage }}
+    return (
+        <Navigator
+            style={{flex: 1}}
+            initialRoute={{ component: MeauPage }}
             renderScene={this.renderScene}/>
     )
   }
 
   renderScene(route, navigator) {
-    if (route.component === LoginPage) {
-      return <route.component navigator={navigator} onHandleChangeCurrentUser={this.handleChangeCurrentUser}
+    if (route.component === MeauPage) {
+      return <route.component navigator={navigator}
                               title='title' {...route.passProps} />;
     }
-    return <route.component navigator={navigator} {...route.passProps}/>;
-  }
 
-  handleChangeCurrentUser(user) {
-    this.setState({currentUser: user});
+    return <route.component navigator={navigator} {...route.passProps}/>;
   }
 }
 
