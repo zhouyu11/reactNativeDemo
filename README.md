@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/zhouyu11/reactNativeDemo?branch=master)](https://travis-ci.org/zhouyu11/reactNativeDemo)
